@@ -10,6 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Mirza_Lorena_Lab5.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Mirza_Lorena_Lab5
 {
@@ -25,6 +27,8 @@ namespace Mirza_Lorena_Lab5
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<ExpenseContext>(opt => opt.UseInMemoryDatabase("ExpenseList"));
+
             services.AddControllers();
         }
 
